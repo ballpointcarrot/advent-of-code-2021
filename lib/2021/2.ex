@@ -2,23 +2,23 @@ import AOC
 
 aoc 2021, 2 do
   def action(line) do
-    [direction, length] = String.split(line, " ")
-    [direction, String.to_integer(length)]
+    [direction, magnitude] = String.split(line, " ")
+    [direction, String.to_integer(magnitude)]
   end
 
-  def drive_sub([direction, distance], [forward, depth]) do
+  def drive_sub([direction, magnitude], [forward, depth]) do
     case direction do
-      "forward" -> [forward + distance, depth]
-      "up" -> [forward, depth - distance]
-      "down" -> [forward, depth + distance]
+      "forward" -> [forward + magnitude, depth]
+      "up" -> [forward, depth - magnitude]
+      "down" -> [forward, depth + magnitude]
     end
   end
 
-  def drive_sub_nose([direction, distance], [forward, depth, aim]) do
+  def drive_sub_nose([direction, magnitude], [forward, depth, aim]) do
     case direction do
-      "forward" -> [forward + distance, depth + distance * aim, aim]
-      "up" -> [forward, depth, aim - distance]
-      "down" -> [forward, depth, aim + distance]
+      "forward" -> [forward + magnitude, depth + magnitude * aim, aim]
+      "up" -> [forward, depth, aim - magnitude]
+      "down" -> [forward, depth, aim + magnitude]
     end
   end
 
