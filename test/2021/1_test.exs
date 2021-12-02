@@ -16,7 +16,7 @@ defmodule D1Test do
     263
     """
 
-    [_, res] = star1(input)
+    [_, res] = p1(input)
     assert res == 7
 
     input2 = """
@@ -26,7 +26,7 @@ defmodule D1Test do
     2
     """
 
-    [_, res2] = star1(input2)
+    [_, res2] = p1(input2)
     assert res2 == 2
 
     input3 = """
@@ -46,7 +46,7 @@ defmodule D1Test do
     165
     """
 
-    [_, res3] = star1(input3)
+    [_, res3] = p1(input3)
     assert res3 == 8
   end
 
