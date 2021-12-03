@@ -6,13 +6,23 @@ aoc 2021, 2 do
     [direction, String.to_integer(magnitude)]
   end
 
-  def drive_sub([direction, magnitude], [forward, depth]) when direction == "forward", do: [forward+magnitude, depth]
-  def drive_sub([direction, magnitude], [forward, depth]) when direction == "up", do: [forward, depth-magnitude]
-  def drive_sub([direction, magnitude], [forward, depth]) when direction == "down", do: [forward, depth+magnitude]
+  def drive_sub([direction, magnitude], [forward, depth]) when direction == "forward",
+    do: [forward + magnitude, depth]
 
-  def drive_sub_nose([direction, magnitude], [forward, depth, aim]) when direction == "forward", do: [forward + magnitude, depth + magnitude*aim, aim]
-  def drive_sub_nose([direction, magnitude], [forward, depth, aim]) when direction == "up", do: [forward, depth ,aim - magnitude]
-  def drive_sub_nose([direction, magnitude], [forward, depth, aim]) when direction == "down", do: [forward, depth ,aim + magnitude]
+  def drive_sub([direction, magnitude], [forward, depth]) when direction == "up",
+    do: [forward, depth - magnitude]
+
+  def drive_sub([direction, magnitude], [forward, depth]) when direction == "down",
+    do: [forward, depth + magnitude]
+
+  def drive_sub_nose([direction, magnitude], [forward, depth, aim]) when direction == "forward",
+    do: [forward + magnitude, depth + magnitude * aim, aim]
+
+  def drive_sub_nose([direction, magnitude], [forward, depth, aim]) when direction == "up",
+    do: [forward, depth, aim - magnitude]
+
+  def drive_sub_nose([direction, magnitude], [forward, depth, aim]) when direction == "down",
+    do: [forward, depth, aim + magnitude]
 
   def p1(testInput \\ nil) do
     input = testInput || input_string()
