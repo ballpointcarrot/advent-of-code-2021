@@ -109,8 +109,6 @@ aoc 2021, 4 do
     {last_number, winning_board} =
       Enum.reduce_while(bingo_numbers_list, {nil, boards}, &mark_boards/2)
 
-    IO.inspect(winning_board)
-
     unmarked_board_sum =
       winning_board
       |> Enum.filter(fn tuple -> elem(tuple, 1) == false end)

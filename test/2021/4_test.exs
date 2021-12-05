@@ -21,7 +21,7 @@ defmodule D4Test do
     """
 
     res = p1(testInput)
-    IO.inspect(res)
+    assert res == 4512
   end
 
   test "board marking" do
@@ -33,8 +33,10 @@ defmodule D4Test do
         )
       )
 
-    updated_boards = mark_boards("22", boards)
-    assert [] == updated_boards
+    {next_step, {last_mark, updated_boards}} = mark_boards("22", {nil, boards})
+    assert next_step == :cont
+    assert last_mark == "22"
+    assert is_tuple(Enum.find(List.first(updated_boards), &(&1 == {"22", true})))
   end
 
   test "check_for_win" do
@@ -66,7 +68,8 @@ defmodule D4Test do
       {"6", false}
     ]
 
-    {continue?, board} = check_for_win([board])
+    # use a random number for mark
+    {continue?, board} = check_for_win("22", [board])
     assert continue? == :halt
   end
 
@@ -89,6 +92,6 @@ defmodule D4Test do
     """
 
     res = p2(testInput)
-    IO.inspect(res)
+    assert res == 1924
   end
 end
