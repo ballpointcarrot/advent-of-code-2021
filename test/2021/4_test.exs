@@ -69,7 +69,7 @@ defmodule D4Test do
     ]
 
     # use a random number for mark
-    {continue?, board} = check_for_win("22", [board])
+    {continue?, _board} = check_for_win("22", [board])
     assert continue? == :halt
   end
 

@@ -48,8 +48,21 @@ defmodule D3Test do
 
   test "calls p2" do
     input = """
+    00100
+    11110
+    10110
+    10111
+    10101
+    01111
+    00111
+    11100
+    10000
+    11001
+    00010
+    01010
     """
 
-    IO.inspect(p2(input))
+    res = p2(input)
+    assert res == 230
   end
 end

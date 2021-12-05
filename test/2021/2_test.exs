@@ -12,7 +12,9 @@ defmodule D2Test do
     forward 2
     """
 
-    IO.inspect(p1(input))
+    res = p1(input)
+    assert res == 150
+    # IO.inspect(p1(input))
   end
 
   test "calls p2" do
@@ -25,6 +27,8 @@ defmodule D2Test do
     forward 2
     """
 
-    IO.inspect(p2(input))
+    res = p2(input)
+    assert res == 900
+    # IO.inspect(p2(input))
   end
 end

@@ -34,7 +34,7 @@ aoc 2021, 2 do
       |> Enum.map(&action/1)
       |> Enum.reduce([0, 0], &drive_sub/2)
 
-    IO.inspect(components)
+    # IO.inspect(components)
     Enum.product(components)
   end
 
@@ -48,7 +48,7 @@ aoc 2021, 2 do
       |> Enum.map(&action/1)
       |> Enum.reduce([0, 0, 0], &drive_sub_nose/2)
 
-    IO.inspect(Enum.drop(components, -1))
+    # IO.inspect(Enum.drop(components, -1))
 
     Enum.product(Enum.drop(components, -1))
   end
